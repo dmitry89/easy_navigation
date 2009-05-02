@@ -1,6 +1,3 @@
-require 'rake'             # the gem
-require 'rake/rdoctask'    # the task
-
 module EasyNavigation
 
   module Helper
