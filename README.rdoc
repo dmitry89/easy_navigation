@@ -4,9 +4,8 @@ Rails gem/plugin for generating a tabbed navigation for Rails.
 
 == Requirements
 
-Rails 2.3.2
-
-jQuery 1.5 (using jRails)
+* Rails 2.3.2
+* jQuery 1.5 (using jRails)
 
 == Install
 
