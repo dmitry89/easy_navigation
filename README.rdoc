@@ -1,6 +1,6 @@
 = Easy Navigation
 
-Rails gem/plugin for generating a tabbed navigation for Rails.
+Full stack Rails gem/plugin for drop down/tabbed navigation.
 
 == Requirements
 
