@@ -70,8 +70,7 @@ module EasyNavigation
       end
 
       def render_tab(id, text, url, menus_html, class_name)
-        content_tag(:li,"#{link_to(text, url, :class => 'tab_link')} #{content_tag(:div,
-          content_tag(:ul, menus_html), :id => "#{id}_menus", :style => "display:none;")}",
+        content_tag(:li, "#{link_to(text, url, :class => 'tab_link')} #{content_tag(:ul, menus_html, :id => "#{id}_menus", :style => "display:none;")}",
           :id => id, :class => class_name)
       end
 
@@ -80,7 +79,6 @@ module EasyNavigation
       end
 
       def render_navigation(id, tabs_html, class_name)
-        tabs_html << javascript_tag("var navigation = new EasyNavigation('#{id}');")
         content_tag("ul", tabs_html, :id => id, :class => class_name)
       end
 
