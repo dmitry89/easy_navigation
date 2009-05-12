@@ -75,7 +75,8 @@ module EasyNavigation
       end
 
       def render_empty_tab(id, text, url, class_name)
-        content_tag("li", link_to(text, url, :class => 'tab_link'), :id => id, :class => class_name)
+        content_tag("li", link_to(text, url, :class => 'tab_link'),
+          :id => id, :class => class_name)
       end
 
       def render_navigation(id, tabs_html, class_name)

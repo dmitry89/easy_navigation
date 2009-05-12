@@ -5,6 +5,7 @@ Rails gem/plugin for generating a tabbed navigation for Rails.
 == Requirements
 
 Rails 2.3.2
+
 jQuery 1.5 (using jRails)
 
 == Install
@@ -30,7 +31,12 @@ And you're done!
 
 == Usage
 
-Once installed simply create config/initializers/easy_navigation.rb file like
+After installation run the generator to place default stylesheet and javscript
+code (jQuery):
+
+  script/generate easy_navigation
+
+To create your menus create config/initializers/easy_navigation.rb file like
 this:
 
   EasyNavigation::Builder.config do |map|
@@ -113,16 +119,21 @@ simply override the following methods (from EasyNavigation::Helper):
 
 ====Tabs
 
+  def render_empty_tab(id, text, url, class_name)
+    content_tag("li", link_to(text, url, :class => 'tab_link'),
+      :id => id, :class => class_name)
+  end
+
   def render_tab(id, text, url, menus_html, class_name)
-    content_tag("li",
-      "#{link_to(t(text), url)} #{content_tag("ul", menus_html)}",
+    content_tag(:li, "#{link_to(text, url, :class => 'tab_link')} #{content_tag(:ul, menus_html, :id => "#{id}_menus", :style => "display:none;")}",
       :id => id, :class => class_name)
   end
 
 ====Menus
 
   def render_menu(id, text, url, class_name)
-    content_tag("li", link_to(t(text), url), :id => id, :class => class_name)
+    content_tag("li", link_to(text, url, :class => "menu_link"),
+      :id => id, :class => class_name)
   end
 
 ====Separators
@@ -130,9 +141,6 @@ simply override the following methods (from EasyNavigation::Helper):
   def render_separator(class_name)
     content_tag("li", "|", :class => class_name)
   end
-
-
-Pretty easy... right?
 
 == License
 
