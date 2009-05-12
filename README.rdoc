@@ -4,8 +4,8 @@ Rails gem/plugin for generating a tabbed navigation for Rails.
 
 == Requirements
 
-This gem/plugin is intented to be used with Rails 2.2 as it uses i18n,
-also you'll need to install Haml as it uses Sass for CSS.
+Rails 2.3.2
+jQuery 1.5 (using jRails)
 
 == Install
 
