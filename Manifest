@@ -1,5 +1,4 @@
 Manifest
-easy_navigation.gemspec
 generators/easy_navigation/templates/stylesheets/sass/easy_navigation.sass
 generators/easy_navigation/templates/javascripts/easy_navigation.js
 generators/easy_navigation/templates/images/arrow.png
